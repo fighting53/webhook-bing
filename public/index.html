@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>My Shopify App</title>
+    <script src="https://unpkg.com/@shopify/app-bridge"></script>
+  </head>
+  <body>
+    <h1>欢迎使用我的应用</h1>
+    <button id="loadProducts">获取产品</button>
+
+    <script>
+      document
+        .getElementById("loadProducts")
+        .addEventListener("click", async () => {
+          try {
+            const response = await fetch("/shopify/products");
+            const data = await response.json();
+            console.log("产品数据:", data);
+          } catch (err) {
+            console.error("获取产品失败:", err);
+          }
+        });
+    </script>
+  </body>
+</html>
