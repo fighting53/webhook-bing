@@ -2,9 +2,7 @@
 
 # dependencies
 /node_modules
-/.gitignore
 /.pnp
-.gitignore
 .pnp.js
 
 # testing
